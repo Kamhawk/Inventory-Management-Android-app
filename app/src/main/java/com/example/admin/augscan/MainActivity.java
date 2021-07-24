@@ -9,19 +9,19 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    private FirebaseAuth auth;
+//    private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        auth = FirebaseAuth.getInstance();
+//        auth = FirebaseAuth.getInstance();
 
-        FirebaseUser user = auth.getCurrentUser();
+//        FirebaseUser user = auth.getCurrentUser();
 
-        if(user != null){
+//        if(user != null){
             finish();
             startActivity(new Intent(this, dashboardActivity.class));
-        }
+//        }
 
     }
 

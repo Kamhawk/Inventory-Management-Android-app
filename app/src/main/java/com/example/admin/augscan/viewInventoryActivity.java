@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Map;
 
 public class viewInventoryActivity extends AppCompatActivity {
-    private FirebaseAuth firebaseAuth;
+//    private FirebaseAuth firebaseAuth;
     RecyclerView mrecyclerview;
     DatabaseReference mdatabaseReference;
    private TextView totalnoofitem, totalnoofsum;
@@ -32,9 +32,9 @@ public class viewInventoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_inventory);
         totalnoofitem= findViewById(R.id.totalnoitem);
         totalnoofsum = findViewById(R.id.totalsum);
-        firebaseAuth = FirebaseAuth.getInstance();
-        final FirebaseUser users = firebaseAuth.getCurrentUser();
-        String finaluser=users.getEmail();
+//        firebaseAuth = FirebaseAuth.getInstance();
+//        final FirebaseUser users = firebaseAuth.getCurrentUser();
+        String finaluser="kamel@cdv.ch";
         String resultemail = finaluser.replace(".","");
         mdatabaseReference = FirebaseDatabase.getInstance().getReference("Users").child(resultemail).child("Items");
         mrecyclerview = findViewById(R.id.recyclerViews);

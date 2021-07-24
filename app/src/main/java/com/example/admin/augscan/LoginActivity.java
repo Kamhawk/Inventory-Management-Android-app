@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordresetemail;
     private ProgressBar progressBar;
 
-    private FirebaseAuth auth;
+//    private FirebaseAuth auth;
     private ProgressDialog processDialog;
 
     @Override
@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordresetemail = findViewById(R.id.emailSignIn);
         progressBar = (ProgressBar) findViewById(R.id.progressbars);
         progressBar.setVisibility(View.GONE);
-        auth = FirebaseAuth.getInstance();
+//        auth = FirebaseAuth.getInstance();
         processDialog = new ProgressDialog(this);
 
 
@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
             passwordresetemail.requestFocus();
             return;
         }
-        progressBar.setVisibility(View.VISIBLE);
+        /*progressBar.setVisibility(View.VISIBLE);
         auth.sendPasswordResetEmail(resetemail)
 
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         progressBar.setVisibility(View.GONE);
                     }
-                });
+                });*/
     }
 
 
@@ -96,19 +96,19 @@ public class LoginActivity extends AppCompatActivity {
         processDialog.setMessage("................Please Wait.............");
         processDialog.show();
 
-        auth.signInWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
+//        auth.signInWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if(task.isSuccessful()){
                     processDialog.dismiss();
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginActivity.this, dashboardActivity.class));
-                }
-                else{
-                    Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
-                    processDialog.dismiss();
-                }
-            }
-        });
+//                }
+//                else{
+//                    Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
+//                    processDialog.dismiss();
+//                }
+//            }
+//        });
     }
 }

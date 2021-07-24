@@ -27,7 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
     public Button UserRegisterBtn;
     private ProgressBar progressBar;
 
-    private FirebaseAuth mAuth;
+//    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.GONE);
 
-        mAuth = FirebaseAuth.getInstance();
+//        mAuth = FirebaseAuth.getInstance();
 
         //  findViewById(R.id.button_register).setOnClickListener(this);
 
@@ -61,9 +61,9 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        if (mAuth.getCurrentUser() != null) {
+     /*   if (mAuth.getCurrentUser() != null) {
             //handle the already login user
-        }
+        }*/
     }
 //    public void addStudent(){
 //        String studentNameValue = editTextName.getText().toString();
@@ -139,7 +139,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email, password)
+        /*mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -181,7 +181,7 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this, "Registration Failed", Toast.LENGTH_LONG).show();
                         }
                     }
-                });
+                });*/
 
     }
 

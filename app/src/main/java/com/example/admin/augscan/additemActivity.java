@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class additemActivity extends AppCompatActivity {
     private EditText itemname,itemcategory,itemprice;
     private TextView itembarcode;
-    private FirebaseAuth firebaseAuth;
+//    private FirebaseAuth firebaseAuth;
     public static TextView resulttextview;
     Button scanbutton, additemtodatabase;
     DatabaseReference databaseReference;
@@ -29,7 +29,7 @@ public class additemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_additem);
-        firebaseAuth = FirebaseAuth.getInstance();
+//        firebaseAuth = FirebaseAuth.getInstance();
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         databaseReferencecat = FirebaseDatabase.getInstance().getReference("Users");
@@ -71,8 +71,8 @@ public  void additem(){
         String itemcategoryValue = itemcategory.getText().toString();
         String itempriceValue = itemprice.getText().toString();
         String itembarcodeValue = itembarcode.getText().toString();
-         final FirebaseUser users = firebaseAuth.getCurrentUser();
-        String finaluser=users.getEmail();
+//         final FirebaseUser users = firebaseAuth.getCurrentUser();
+        String finaluser="kamel@cdv.ch";
          String resultemail = finaluser.replace(".","");
     if (itembarcodeValue.isEmpty()) {
         itembarcode.setError("It's Empty");
@@ -115,7 +115,7 @@ public  void additem(){
     // logout below
     private void Logout()
     {
-        firebaseAuth.signOut();
+//        firebaseAuth.signOut();
         finish();
         startActivity(new Intent(additemActivity.this,LoginActivity.class));
         Toast.makeText(additemActivity.this,"LOGOUT SUCCESSFUL", Toast.LENGTH_SHORT).show();

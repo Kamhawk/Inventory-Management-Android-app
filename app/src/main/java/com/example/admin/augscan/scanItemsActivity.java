@@ -22,7 +22,7 @@ import com.google.firebase.database.Query;
 
 public class scanItemsActivity extends AppCompatActivity {
     public static EditText resultsearcheview;
-    private FirebaseAuth firebaseAuth;
+//    private FirebaseAuth firebaseAuth;
     ImageButton scantosearch;
     Button searchbtn;
     Adapter adapter;
@@ -32,9 +32,9 @@ public class scanItemsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_items);
-        firebaseAuth = FirebaseAuth.getInstance();
-        final FirebaseUser users = firebaseAuth.getCurrentUser();
-        String finaluser=users.getEmail();
+//        firebaseAuth = FirebaseAuth.getInstance();
+//        final FirebaseUser users = firebaseAuth.getCurrentUser();
+        String finaluser="kamel@cdv.ch";
         String resultemail = finaluser.replace(".","");
         mdatabaseReference = FirebaseDatabase.getInstance().getReference("Users").child(resultemail).child("Items");
         resultsearcheview = findViewById(R.id.searchfield);

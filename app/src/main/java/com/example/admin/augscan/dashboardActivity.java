@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class dashboardActivity extends AppCompatActivity implements View.OnClickListener  {
-    private FirebaseAuth firebaseAuth;
+//    private FirebaseAuth firebaseAuth;
     TextView firebasenameview;
     Button toast;
 
@@ -29,10 +29,10 @@ public class dashboardActivity extends AppCompatActivity implements View.OnClick
 
         // this is for username to appear after login
 
-        firebaseAuth = FirebaseAuth.getInstance();
+//        firebaseAuth = FirebaseAuth.getInstance();
 
-        final FirebaseUser users = firebaseAuth.getCurrentUser();
-        String finaluser=users.getEmail();
+//        final FirebaseUser users = firebaseAuth.getCurrentUser();
+        String finaluser="kamel@cdv.ch";
         String result = finaluser.substring(0, finaluser.indexOf("@"));
         String resultemail = result.replace(".","");
         firebasenameview.setText("Welcome, "+resultemail);
@@ -76,7 +76,7 @@ public class dashboardActivity extends AppCompatActivity implements View.OnClick
     // logout below
     private void Logout()
     {
-        firebaseAuth.signOut();
+//        firebaseAuth.signOut();
         finish();
         startActivity(new Intent(dashboardActivity.this,LoginActivity.class));
         Toast.makeText(dashboardActivity.this,"LOGOUT SUCCESSFUL", Toast.LENGTH_SHORT).show();
