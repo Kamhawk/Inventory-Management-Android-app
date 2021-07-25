@@ -16,14 +16,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class deleteItemsActivity extends AppCompatActivity {
     public static TextView resultdeleteview;
-    private FirebaseAuth firebaseAuth;
+//    private FirebaseAuth firebaseAuth;
     Button scantodelete, deletebtn;
     DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_items);
-        firebaseAuth = FirebaseAuth.getInstance();
+//        firebaseAuth = FirebaseAuth.getInstance();
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         resultdeleteview = findViewById(R.id.barcodedelete);
@@ -49,8 +49,8 @@ public class deleteItemsActivity extends AppCompatActivity {
     public void deletefrmdatabase()
     {
         String deletebarcodevalue = resultdeleteview.getText().toString();
-        final FirebaseUser users = firebaseAuth.getCurrentUser();
-        String finaluser=users.getEmail();
+//        final FirebaseUser users = firebaseAuth.getCurrentUser();
+        String finaluser="kamel@cdv.ch";
         String resultemail = finaluser.replace(".","");
         if(!TextUtils.isEmpty(deletebarcodevalue)){
             databaseReference.child(resultemail).child("Items").child(deletebarcodevalue).removeValue();
